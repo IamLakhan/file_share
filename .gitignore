@@ -5,6 +5,7 @@ __pycache__
 db.sqlite3
 media
 file_share/secrets.py
+uploads
 # Backup files # 
 *.bak 
 
