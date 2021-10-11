@@ -6,6 +6,7 @@ this is dashboard
 {% for f in file %}
 <li>
     {{f.file_name}}
+    <a href="https://{{f.upload}}" >View File</a>
 </li>
 {% endfor %}
 <br>
