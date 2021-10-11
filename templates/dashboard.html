@@ -1,2 +1,12 @@
 this is dashboard
 <a href="logout/">logout</a>
+
+<br>
+<div>files uploaded</div>
+{% for f in file %}
+<li>
+    {{f.file_name}}
+</li>
+{% endfor %}
+<br>
+
