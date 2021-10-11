@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-
+from .views import file_upload, first_entry
 
 urlpatterns = [
-    # path('home/', first_entry)
+    path('file-upload/', file_upload),
+    # path('', first_entry, name = 'home'),
 ]
