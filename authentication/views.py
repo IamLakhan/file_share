@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 # Create your views here.
 def login_user(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, username=email, password=password)
         if user:
             login(request, user)
             return redirect('home')
@@ -29,7 +29,7 @@ def register(request):
         password = request.POST.get('password')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
-        user = User.objects.create_user(username=username, email = email, password=password)
+        user = User.objects.create_user(email = email, password=password)
         user.first_name = first_name
         user.last_name = last_name
         user.save()
