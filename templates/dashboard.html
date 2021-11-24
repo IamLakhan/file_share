@@ -227,7 +227,7 @@ a.article:hover {
 
             <ul class="list-unstyled components">            
                 <li>
-                    <a href="#">Home</a>
+                    <a href="{% url 'upload' %}">Home</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Groups</a>
@@ -254,10 +254,10 @@ a.article:hover {
 
         <!-- Page Content  -->
         <div id="content">
-            <div class="upload-btn-wrapper">
-                <button class="btn"><i class="fa fa-plus"></i></button>
-                <input type="file" name="myfile" />      
-              </div>
+           <!-- <div class="upload-btn-wrapper">
+                <button class="btn"><i class="fa fa-plus"><a href="{% url 'upload' %}"></a></i></button>
+                 
+              </div> -->
         
               <table class="table table-striped">
                 <thead>
