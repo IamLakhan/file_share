@@ -29,9 +29,10 @@ def register(request):
         password = request.POST.get('password')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
-        user = User.objects.create_user(email = email, password=password)
+        user = User.objects.create_user(username= email, password=password)
         user.first_name = first_name
         user.last_name = last_name
+        user.email = email
         user.save()
         if user:
             return redirect('login')
