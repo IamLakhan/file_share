@@ -1,0 +1,16 @@
+<table border='1'>
+    <tr>
+      <th>FROM</th>
+      <th>File name</th>
+      <th>URL</th>
+      <th>Shared on</th>
+    </tr>
+    {% for x in file %}
+      <tr>
+        <td>{{ x.from_user }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.file_url }}</td>
+        <td>{{ x.uploaded_on }}</td>
+      </tr>
+    {% endfor %}
+  </table>

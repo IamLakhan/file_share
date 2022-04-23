@@ -1,0 +1,10 @@
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="to-email">To</label>
+    <input type="email" name="to-email" id="from-email">
+
+    <label for="file">File</label>
+    <input type="file" name="file" id="file">
+
+    <button type="submit">Share</button>
+</form>

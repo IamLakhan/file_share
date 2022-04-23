@@ -21,4 +21,5 @@ urlpatterns = [
     path('', first_entry, name = 'home'),
     path('', include("authentication.urls")),
     path('', include("main.urls")),
+    path('', include("share.urls"))
 ]

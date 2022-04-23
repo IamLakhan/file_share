@@ -1,84 +1,199 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html style="font-size: 16px;">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" class="no-js">
+  {% load static %}
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="EASY AND SECURE ACCESS TOALL OF YOUR CONTENT​">
-    <meta name="description" content="">
-    <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static 'nicepage.css'%}" media="screen">
-    <link rel="stylesheet" href="{% static 'Home.css'%}" media="screen">
-    <script class="u-script" type="text/javascript" src="./jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="./nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 3.26.0, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah:400|Amita:400,700">
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
-  </head>
-  <body class="u-body">
-    <section class="u-clearfix u-section-1" id="sec-c826">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-align-left u-expanded-width u-left-0 u-shape u-shape-rectangle u-shape-1"></div>
-        <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-43 u-layout-cell-1">
-                <div class="u-container-layout u-valign-middle u-container-layout-1">
-                  <h3 class="u-text u-text-default u-text-1">IPFS - Peer to Peer Hypermedia Protocol</h3>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IPFS-Peer to Peer Hpermedia Protocol</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+
+        <!--Header-->
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+							<a href="#">
+								<img class="header-logo-image" src="{% static 'images/logo.svg' %}" alt="Logo">
+                            </a>
+                        </h1>
+                    </div>
                 </div>
-              </div>
-              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-17 u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <a href="{% url 'login'%}" class="u-black u-btn u-button-style u-btn-1">Login/SignUp</a>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-grey-5 u-section-2" id="carousel_0b43">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-expanded-width-md u-expanded-width-sm u-shape u-shape-svg u-text-grey-60 u-shape-1">
-          <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 150" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d816"></use></svg>
-          <svg class="u-svg-content" viewBox="0 0 160 150" x="0px" y="0px" id="svg-d816"><path d="M121.1,18C110.7,1.5,89.8-4.6,72.6,3.7c-10.5,5-17.7,14.2-20.8,24.7C48.4,39.9,42.4,48,28.3,55.5
-	c-50.6,26.9-27.3,99.4,22,84.7c14.3-4.2,29.7-1.4,43.2,5.1c13.3,6.5,29.3,6.4,43.2-1.8c21-12.5,29.3-40.1,18.8-62.7
-	c-2.5-5.4-5.9-10.1-9.8-14c-9.4-9.3-16.4-21-18.8-34.2C125.9,27.6,124,22.6,121.1,18z"></path></svg>
-        </div>
-        <div class="u-image u-image-circle u-image-1" alt="" data-image-width="1600" data-image-height="1200"></div>
-        <div class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
-          <div class="u-container-layout u-valign-bottom u-container-layout-1">
-            <h1 class="u-align-center u-custom-font u-text u-text-default u-text-1">
-              <span class="u-text-palette-5-light-3">
-                <font color="#e0e5eb">EASY AND SECURE ACCESS TO</font>
-                <br>ALL OF YOUR CONTENT 
-              </span>
-            </h1>
-            <p class="u-custom-font u-text u-text-default u-text-2">
-              <span class="u-text-palette-4-light-2">Store, share and collaborate on files and folders from any<br>mobile device, table or computer.
-              </span>
-              <span class="u-text-palette-3-light-2">
-                <span class="u-text-palette-4-light-2"></span>
-              </span>
-            </p>
-            <a href="{% url 'login'%}" class="u-border-2 u-border-active-grey-40 u-border-grey-15 u-border-hover-grey-25 u-btn u-btn-round u-button-style u-hover-grey-30 u-none u-radius-50 u-btn-1">LOGIN / SIGNUP</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
-   
-  </body>
+        </header>
+
+        <!--Section Title on TOp-->
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0">InterPlanetary File System</h1>
+	                        <p class="hero-paragraph">Peer-to-Peer HyperMedia Protocol</p>
+	                        <div class="hero-cta">
+                            <a class="button button-primary" href="{% url 'login'%}">SignIn</a>
+                            <a class="button button-primary" href="{% url 'register'%}">SignUp</a></div>
+						</div>
+						<div class="hero-figure anime-element">
+							<svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
+								<rect width="528" height="396" style="fill:transparent;" />
+							</svg>
+							<div class="hero-figure-box hero-figure-box-01" data-rotation="45deg"></div>
+							<div class="hero-figure-box hero-figure-box-02" data-rotation="-45deg"></div>
+							<div class="hero-figure-box hero-figure-box-03" data-rotation="0deg"></div>
+							<div class="hero-figure-box hero-figure-box-04" data-rotation="-135deg"></div>
+							<div class="hero-figure-box hero-figure-box-05"></div>
+							<div class="hero-figure-box hero-figure-box-06"></div>
+							<div class="hero-figure-box hero-figure-box-07"></div>
+							<div class="hero-figure-box hero-figure-box-08" data-rotation="-22deg"></div>
+							<div class="hero-figure-box hero-figure-box-09" data-rotation="-52deg"></div>
+							<div class="hero-figure-box hero-figure-box-10" data-rotation="-50deg"></div>
+						</div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Features Section Displaying All Features-->
+            <section class="features section">
+                <div class="container">
+					<div class="features-inner section-inner has-bottom-divider">
+                        <div class="features-wrap">
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'images/feature-icon-01.svg' %}" alt="Feature 01">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Productive</h4>
+                                    <p class="text-sm mb-0">IPFS attempts to address the deficiencies of the client-server model and HTTP web through a novel p2p file sharing system. This system is a synthesis of several new and existing innovations. IPFS is an open-source project created by Protocol Labs, an R&D lab for network protocols and former Y Combinator startup.</p>
+                                </div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'images/feature-icon-02.svg' %}" alt="Feature 02">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Distributed Hash Table</h4>
+                                    <p class="text-sm mb-0">A hash table is a data structure that stores information as key/value pairs. In distributed hash tables (DHT) the data is spread across a network of computers, and efficiently coordinated to enable efficient access and lookup between nodes.The main advantages of DHTs are in decentralization, fault tolerance and scalability.Together these features result in a system that is generally more resilient than client-server structures.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'images/feature-icon-03.svg' %}" alt="Feature 03">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Block Exchanges</h4>
+                                    <p class="text-sm mb-0">The popular file sharing system Bittorrent is able to successfully coordinate the transfer of data between millions of nodes by relying on an innovative data exchange protocol, however it is limited to the torrent ecosystem. IPFS implements a generalized version of this protocol called BitSwap, which operates as a marketplace for any type of data. This marketplace is the basis for Filecoin: a p2p storage marketplace built on IPFS.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'images/feature-icon-04.svg' %}" alt="Feature 04">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Self-certifying File System</h4>
+                                    <p class="text-sm mb-0">IPFS builds on this concept to create the InterPlanetary Name Space (IPNS). It is an SFS that uses public-key cryptography to self-certify objects published by users of the network. We mentioned earlier that all objects on IPFS can be uniquely identified, but this also extends to nodes. Each node on the network has a set of public keys, private keys and a node ID which is the hash of its public key. Nodes can therefore use their private keys to ‘sign’ any data objects they publish, and the authenticity of this data can be verified using the sender’s public key.</p>
+                                </div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'images/feature-icon-05.svg' %}" alt="Feature 05">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Version Control Systems</h4>
+                                    <p class="text-sm mb-0">IPFS does not rely on access to Internet protocols. Data can be distributed in overlay networks, which are simply networks built on another network. These features are notable, because they are core elements in a censorship-resistant web. It could be a useful tool in promoting free speech to counter the prevalence of internet censorship around the world, but we should also be cognizant of the potential for abuse by bad actors.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'images/feature-icon-06.svg' %}" alt="Feature 06">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Merkle DAG</h4>
+                                    <p class="text-sm mb-0">A merkle DAG is a blend of a Merkle Tree and a Directed Acyclic Graph (DAG). Merkle trees ensure that data blocks exchanged on p2p networks are correct, undamaged and unaltered. This verification is done by organizing data blocks using cryptographic hash functions. This is simply a function that takes an input and calculates a unique alphanumeric string (hash) corresponding with that input. It is easy to check that an input will result in a given hash, but incredibly difficult to guess the input from a hash.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--List Showing All features of Project Storage-->
+            <section class="pricing section">
+                <div class="container-sm">
+                    <div class="pricing-inner section-inner">
+                        <div class="pricing-header text-center">
+                            <h2 class="section-title mt-0">Unlimited Storage</h2>
+                            
+                        </div>
+						<div class="pricing-tables-wrap">
+                            <div class="pricing-table">
+                                <div class="pricing-table-inner is-revealing">
+                                    <div class="pricing-table-main">
+                                        <div class="pricing-table-header pb-24">
+                                            <div class="pricing-table-price"><span class="pricing-table-price-currency h2">$</span><span class="pricing-table-price-amount h1">0</span><span class="text-xs">/life-long</span></div>
+                                        </div>
+										<div class="pricing-table-features-title text-xs pt-24 pb-24">Features</div>
+                                        <ul class="pricing-table-features list-reset text-xs">
+                                            <li>
+                                                <span>Unlimited Storage</span>
+                                            </li>
+                                            <li>
+                                                <span>Easy Access and Sharing</span>
+                                            </li>
+                                            <li>
+                                                <span>Lifetime Storage at 0 cost</span>
+                                            </li>
+											<li>
+												<span>More Secure</span>
+											</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-table-cta mb-8">
+                                        <a class="button button-primary button-shadow button-block" href="#">Start Using Now!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--Footer Section-->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+						<a href="#">
+							<img class="header-logo-image" src="{% static 'images/logo.svg' %}" alt="Logo">
+						</a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        
+                    </ul>
+                    <div class="footer-copyright">&copy; 2021 IPFS, all rights reserved</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src=" {% static 'js/main.min.js' %}"></script>
+</body>
 </html>

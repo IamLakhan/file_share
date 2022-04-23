@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import File
-import requests
-from .secrets import jwt
 import os
+from .upload import file_upload as fileto_upload
 # Create your views here.
 def first_entry(request):
     if request.user.is_authenticated:
@@ -14,20 +13,19 @@ def file_upload(request):
         return render(request, 'file-upload.html')
     if request.method == 'POST':
         user = request.user
-        file_name = request.POST.get('file-name')
-        upload = request.FILES['upload']
+        upload  = request.FILES['upload']
+        file_name = upload.name
+        file_name = file_name.replace(" ", "_")
         new = File(file_name=file_name, upload=upload,user=user)
         new.save()
-        url = 'https://api.pinata.cloud/pinning/pinFileToIPFS'
-        files = {'file': open(str(new.upload), 'rb')}
-        header = {'Authorization': 'Bearer {}'.format(jwt)}
-        my_response = requests.post(url, headers=header, files=files)
-        hash_value = my_response.text[13:59]
-        upload_url = 'ipfs.io/ipfs/' + hash_value
-        cmd = 'rm {}'.format(new.upload)
-        os.system(cmd)
-        new.upload = upload_url
+        new.upload = fileto_upload(upload)
         new.save()
+        cmd = 'uploads/'+file_name
+        os.remove(cmd)
         return redirect('home')
 
+def file_delete(request, fid):
+    if fid:
+        File.objects.filter(id=fid).delete()
+    return redirect('home')
         
