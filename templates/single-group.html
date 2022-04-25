@@ -1,0 +1,28 @@
+<a href="/group">Group Home</a>
+<br><br>
+Group Details
+<br><br>
+Group Name: {{group.name}}
+<br>
+Description: {{group.description}}
+<br>
+Host name: {{group.host}}
+<br><br>
+Messages
+<br>
+{% for message in messages %}
+<br>
+{{message.name}}
+<br>
+{{message.file_url}}
+<br>
+{% endfor %}
+<br>
+Participants <br>
+<a href="/group/{{group.id}}/add">Add Participants</a>
+<br><br>
+{% for participant in participants %}
+
+{{participant}}
+<br>
+{% endfor %}

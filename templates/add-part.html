@@ -1,0 +1,14 @@
+
+{% if message %}
+<strong>{{message}}</strong>
+{% endif%}
+
+<form action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <label for="email">User Email</label>
+    <input type="email" name="email" id="email">
+
+    <button type="submit">Add User</button>
+</form>
+
+<a href="/group/{{group.id}}">Go back</a>

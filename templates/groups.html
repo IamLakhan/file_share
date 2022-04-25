@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    you are in these groups
+    <br>
+    <hr>
+    {%for group in groups%}
+        Group name : <a href='/group/{{group.id}}'>{{group.name}}</a>
+        <br>
+        Group host: {{group.host}}
+        <br>
+        Group Description: {{group.description}}
+        <br>
+        Group Created on: {{group.created}}
+        <br>
+        <a href="/group/{{group.id}}/delete">Delete</a>
+        <hr>
+    {% endfor%}
+</body>
+</html>
