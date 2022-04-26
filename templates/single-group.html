@@ -6,23 +6,32 @@ Group Name: {{group.name}}
 <br>
 Description: {{group.description}}
 <br>
+{% if admin%} 
+<a href="/group/{{group.id}}/delete">Delete Group</a>
+<br>
+{%endif%}
 Host name: {{group.host}}
 <br><br>
 Messages
-
+{% if admin%}
 <a href="./add-file">Add File</a>
 <br>
+{%endif%}
 {% for message in messages %}
 <br>
 <a href="https://{{message.file_url}}" target="_blank">{{message.name}}</a>
-<a href="./remove-file/{{message.id}}">Remove</a><br>
+{% if admin%}<a href="./remove-file/{{message.id}}">Remove</a><br> 
+{%endif%}
 {% endfor %}
 <br>
 Participants <br>
+{% if admin%}
 <a href="./add">Add Participants</a>
-<br><br>
+<br>
+{%endif%}
+<br>
 {% for participant in participants %}
 
-{{participant.first_name}} || <a href="./remove/{{participant.id}}"> Remove</a> 
+{{participant.first_name}} {% if admin%}|| <a href="./remove/{{participant.id}}"> Remove</a>{%endif%} 
 <br>
 {% endfor %}

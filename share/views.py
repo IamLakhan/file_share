@@ -3,7 +3,10 @@ from django.shortcuts import redirect, render
 from main.models import File
 from .models import UserShare
 from main.upload import file_upload
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
+@login_required(login_url='login')
 def share(request):
     if request.method == 'GET':
         return render(request, "share.html")
@@ -24,7 +27,7 @@ def share(request):
         os.remove(cmd)
         new.delete()
         return redirect('home')
-        
+@login_required(login_url='login')
 def shared_with_me(request): 
     user = request.user
     username = user.username

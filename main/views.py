@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect
 from .models import File
 import os
 from .upload import file_upload as fileto_upload
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def first_entry(request):
     if request.user.is_authenticated:
         return render(request, 'dashboard.html',{'file': File.objects.filter(user=request.user)})
     return render(request, 'home.html')
 
+@login_required(login_url='login')
 def file_upload(request):
     if request.method == 'GET':
         return render(request, 'file-upload.html')
@@ -23,9 +26,8 @@ def file_upload(request):
         cmd = 'uploads/'+file_name
         os.remove(cmd)
         return redirect('home')
-
+@login_required(login_url='login')
 def file_delete(request, fid):
     if fid:
         File.objects.filter(id=fid).delete()
     return redirect('home')
-        
