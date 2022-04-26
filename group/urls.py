@@ -7,9 +7,9 @@ urlpatterns = [
     path('create/', create_group),
     path('<str:pk>/delete/', delete_group),
     path('<str:pk>/add', add_person, name='add'),
-    path('<str:pk>/remove', remove_person),
+    path('<str:pk>/remove/<str:rp>', remove_person),
     path('<str:pk>/add-file', add_file),
-    path('<str:pk>/remove-file', remove_file),
+    path('<str:pk>/remove-file/<str:fid>', remove_file),
     path('<str:pk>/', show_one_group),
     # group home '/' => groups a user is in
     # any group  '/<str>' single group with info and messages 

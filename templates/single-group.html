@@ -9,20 +9,20 @@ Description: {{group.description}}
 Host name: {{group.host}}
 <br><br>
 Messages
+
+<a href="./add-file">Add File</a>
 <br>
 {% for message in messages %}
 <br>
-{{message.name}}
-<br>
-{{message.file_url}}
-<br>
+<a href="https://{{message.file_url}}" target="_blank">{{message.name}}</a>
+<a href="./remove-file/{{message.id}}">Remove</a><br>
 {% endfor %}
 <br>
 Participants <br>
-<a href="/group/{{group.id}}/add">Add Participants</a>
+<a href="./add">Add Participants</a>
 <br><br>
 {% for participant in participants %}
 
-{{participant}}
+{{participant.first_name}} || <a href="./remove/{{participant.id}}"> Remove</a> 
 <br>
 {% endfor %}

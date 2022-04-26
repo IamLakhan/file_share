@@ -1,6 +1,12 @@
+import os
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import Group
+from main.models import File
+
+from main.upload import file_upload
+from .models import Group, Message
+from django.http import HttpResponse
+
 # Create your views here.
 def show_group(request):
     user = request.user
@@ -45,11 +51,45 @@ def add_person(request, pk):
 def username_exists(username):
     return User.objects.filter(username=username).exists()
 
-def remove_person(request):
-    pass
+def remove_person(request, pk, rp):
+    if request.method=='GET':
+        user = request.user
+        group = Group.objects.get(id=pk)
+        if group.host != user:
+            return HttpResponse('You are not allowed to do this')
+        user2 = User.objects.get(id=rp)
+        group.participants.remove(user2)
+        return redirect(request.META.get('HTTP_REFERER'))
+        
 
-def add_file(request):
-    pass
+def add_file(request,pk):
+    group = Group.objects.get(id=pk)
+    if request.method == 'GET':
+        return render(request, 'add-file.html', {'group': group})
+    user = request.user
+    # group = Group.objects.get(id=pk)
+    if group.host != user:
+        return HttpResponse('You are not allowed to do this')
+    file  = request.FILES['file']
+    name = file.name
+    name = name.replace(" ", "_")
+    new = File(file_name=name, upload=file)
+    new.save()
+    new.upload = file_upload(file)
+    new.save()
+    message = Message(user=user, group=group,name=name,file_url=new.upload)
+    message.save()
+    cmd = 'uploads/'+name
+    os.remove(cmd)
+    new.delete()
+    return redirect(request.META.get('HTTP_REFERER'))
 
-def remove_file(request):
-    pass
+def remove_file(request, pk, fid):
+    if request.method=='GET':
+        user = request.user
+        group = Group.objects.get(id=pk)
+        if group.host != user:
+            return HttpResponse('You are not allowed to do this')
+        message = Message.objects.get(id=fid)
+        message.delete()
+        return redirect(request.META.get('HTTP_REFERER'))
